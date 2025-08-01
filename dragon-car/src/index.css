@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  @apply font-sans;
+}
+h1, h2, h3 {
+  @apply font-oswald;
+}
+/* Custom styles for react-datepicker */
+.react-datepicker {
+  background: #181f2a !important;
+  border: 1px solid #22d3ee !important;
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.25);
+  color: #fff !important;
+  font-family: 'Raleway', 'Poppins', 'Inter', sans-serif;
+}
+.react-datepicker__header {
+  background: #232b3b !important;
+  border-bottom: 1px solid #22d3ee !important;
+  padding-top: 10px !important;
+  padding-bottom: 6px !important;
+  position: relative;
+}
+.react-datepicker__current-month, .react-datepicker-time__header, .react-datepicker-year-header {
+  color: #38bdf8 !important;
+  font-weight: 700;
+  font-family: 'Oswald', 'Raleway', sans-serif;
+  font-size: 1.35rem !important;
+  display: inline-block;
+  margin: 0 36px;
+  text-align: center;
+  line-height: 1.2;
+}
+.react-datepicker__navigation {
+  position: absolute;
+  top: 18px !important;
+  z-index: 2;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+}
+.react-datepicker__navigation--previous {
+  left: 8px !important;
+}
+.react-datepicker__navigation--next {
+  right: 8px !important;
+}
+.react-datepicker__day, .react-datepicker__day-name {
+  color: #e0e7ef !important;
+  font-weight: 500;
+}
+.react-datepicker__day--selected, .react-datepicker__day--keyboard-selected {
+  background: linear-gradient(90deg, #06b6d4 0%, #3b82f6 100%) !important;
+  color: #fff !important;
+  border-radius: 0.5rem !important;
+}
+.react-datepicker__day--today {
+  border-bottom: 2px solid #38bdf8 !important;
+}
+.react-datepicker__day:hover {
+  background: #0ea5e9 !important;
+  color: #fff !important;
+}
