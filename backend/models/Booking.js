@@ -1,10 +1,16 @@
-import mongoose from 'mongoose';
+import { Schema, model } from "mongoose";
 
-const bookingSchema = new mongoose.Schema({
+const bookingSchema = new Schema({
   name: String,
   phone: String,
-  date: String, // Format: YYYY-MM-DD
-  time: String, // Format: 10:00 AM
+  date: String,
+  time: String,
+  service: String,
+  status: {
+    type: String,
+    enum: ["pending", "confirmed", "completed"],
+    default: "pending"
+  }
 });
 
-export default mongoose.model('Booking', bookingSchema);
+export default model("Booking", bookingSchema);
