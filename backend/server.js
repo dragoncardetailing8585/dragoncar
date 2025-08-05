@@ -1,6 +1,7 @@
 import express, { json } from "express";
 import { connect } from "mongoose";
 import cors from "cors";
+import contactRoutes from './routes/contact.js';
 import { config } from "dotenv";
 config();
 
@@ -11,6 +12,7 @@ app.use(cors());
 app.use(json());
 
 app.use("/api/bookings", bookingRoutes);
+app.use('/api/contact', contactRoutes);
 
 connect(process.env.MONGO_URI, {
   useNewUrlParser: true,

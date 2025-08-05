@@ -19,7 +19,7 @@ const Navbar = () => {
         {/* Logo */}
         <NavLink to="/" className="flex items-center space-x-2">
           <img src={logo} alt="Logo" className="h-10 w-auto" />
-          <span className="text-white text-2xl font-bold hidden sm:inline">Dragon Car Detailing</span>
+          {/* <span className="text-white text-2xl font-bold hidden sm:inline">Dragon Car Detailing</span> */}
         </NavLink>
 
         {/* Hamburger Menu for Mobile */}
