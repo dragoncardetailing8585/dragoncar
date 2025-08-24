@@ -18,7 +18,7 @@ const Footer = () => {
           <a href="#" className="hover:text-cyan-400" aria-label="Facebook">
             <FaFacebook />
           </a>
-          <a href="#" className="hover:text-cyan-400" aria-label="Instagram">
+          <a href="https://www.instagram.com/dragoncardetailing/" className="hover:text-cyan-400" aria-label="Instagram">
             <FaInstagram />
           </a>
           <a href="#" className="hover:text-cyan-400" aria-label="Twitter">
