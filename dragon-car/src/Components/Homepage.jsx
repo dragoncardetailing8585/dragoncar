@@ -24,9 +24,9 @@ export default function Home() {
           duration={500}
           offset={-64}        // prevents navbar from overlapping
         >
-          <button className="bg-[#00d4ff] hover:bg-[#00bfe5] text-black font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300 hover:shadow-[0_0_15px_#00d4ff]">
+          {/* <button className="bg-[#00d4ff] hover:bg-[#00bfe5] text-black font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300 hover:shadow-[0_0_15px_#00d4ff]">
             Book Your Appointment
-          </button>
+          </button> */}
         </Link>
       </div>
     </section>
