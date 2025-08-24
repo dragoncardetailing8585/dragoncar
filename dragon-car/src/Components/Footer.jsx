@@ -14,7 +14,7 @@ const Footer = () => {
         </div>
 
         {/* Social Media */}
-        <div className="flex space-x-6 text-xl">
+        <div className="flex space-x-6 text-4xl">
           <a href="#" className="hover:text-cyan-400" aria-label="Facebook">
             <FaFacebook />
           </a>
