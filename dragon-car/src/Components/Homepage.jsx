@@ -1,6 +1,7 @@
 import React from 'react';
-import CarBg from '../assets/car-bg.jpg'; 
-import { Link } from 'react-router-dom';
+import CarBg from '../assets/car-bg.jpg';
+// import { Link } from 'react-router-dom';
+import { Link } from "react-scroll";
 
 export default function Home() {
   return (
@@ -17,7 +18,12 @@ export default function Home() {
         <p className="text-xl mb-6">
           Explore a world of customization, creativity, and car aesthetics. Choose your model, color, rims, and more.
         </p>
-        <Link to="/booking">
+        <Link
+          to="booking"        // matches <section id="booking"> in App.jsx
+          smooth={true}
+          duration={500}
+          offset={-64}        // prevents navbar from overlapping
+        >
           <button className="bg-[#00d4ff] hover:bg-[#00bfe5] text-black font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300 hover:shadow-[0_0_15px_#00d4ff]">
             Book Your Appointment
           </button>
