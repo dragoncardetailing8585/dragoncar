@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
 
     // Email to Admin (you)
     const adminMailOptions = {
-      from: email,
+      from: process.env.EMAIL_FROM,
       to: process.env.EMAIL_TO,
       subject: '🚗 New Contact Form Submission',
       text: `

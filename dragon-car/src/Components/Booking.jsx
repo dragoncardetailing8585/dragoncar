@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 const timeSlots = [
   '10:00 AM', '11:00 AM', '12:00 PM',
   '1:00 PM', '2:00 PM', '3:00 PM',
@@ -36,7 +36,7 @@ export default function Booking() {
     if (!selectedDate) return;
     const dateStr = selectedDate.toISOString().split('T')[0];
     try {
-      const res = await fetch(`http://localhost:5000/api/bookings/date/${dateStr}`);
+      const res = await fetch(`${API_URL}/api/bookings/date/${dateStr}`);
       const data = await res.json();
       setBookedSlots((prev) => ({
         ...prev,
@@ -63,7 +63,7 @@ export default function Booking() {
     const dateStr = selectedDate.toISOString().split('T')[0];
 
     try {
-      const res = await fetch("http://localhost:5000/api/bookings", {
+      const res = await fetch(`${API_URL}/api/bookings`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
