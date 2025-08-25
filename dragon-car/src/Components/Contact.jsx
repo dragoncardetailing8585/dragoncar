@@ -1,37 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [sending, setSending] = useState(false);
-  const [success, setSuccess] = useState(false);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setSending(true);
-    setSuccess(false);
-
-    try {
-      const res = await fetch('http://localhost:5000/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-
-      const result = await res.json();
-
-      if (res.ok) {
-        setSuccess(true);
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        alert("❌ Failed: " + result.error);
-      }
-    } catch (err) {
-      console.error(err);
-      alert("❌ Server error");
-    } finally {
-      setSending(false);
-    }
-  };
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-black via-gray-900 to-blue-950 overflow-hidden animate-fade-in pb-24">
       {/* Animated background shapes */}
@@ -41,7 +10,9 @@ export default function Contact() {
       {/* Hero Header */}
       <div className="w-full text-center py-12 mb-2" data-aos="fade-up">
         <h2 className="text-4xl sm:text-5xl font-extrabold text-blue-400 drop-shadow-lg mb-2 tracking-tight animate-fade-in">Contact Us</h2>
-        <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto animate-fade-in delay-100">Have questions or ideas? Reach out to us for a personalized car design experience or any queries you may have.</p>
+        <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto animate-fade-in delay-100">
+          Have questions or ideas? Reach out to us for a personalized car design experience or any queries you may have.
+        </p>
       </div>
 
       <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-10 px-2 sm:px-6 md:px-10 animate-fade-in z-10 flex-1 items-center justify-center">
@@ -88,51 +59,22 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Glassmorphism Contact Form */}
-        <div className="bg-white bg-opacity-10 backdrop-blur-lg border border-blue-400 border-opacity-30 rounded-2xl shadow-2xl p-8 animate-fade-in self-center" data-aos="zoom-in" data-aos-delay="200">
-          <h3 className="text-2xl font-bold text-white mb-6 text-center">Send Us a Message</h3>
-          <form className="space-y-6" onSubmit={handleSubmit}>
-            <div className="relative">
-              <label className="block text-sm font-medium text-blue-200 mb-1">Your Name</label>
-              <span className="absolute left-3 top-9 text-blue-400 text-xl">👤</span>
-              <input 
-                type="text"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                placeholder="Enter your name" 
-                className="w-full px-4 pl-10 py-3 rounded-lg bg-gray-900 bg-opacity-70 border border-blue-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400" 
-              />
-            </div>
-            <div className="relative">
-              <label className="block text-sm font-medium text-blue-200 mb-1">Your Email</label>
-              <span className="absolute left-3 top-9 text-blue-400 text-xl">📧</span>
-              <input 
-                type="email"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                placeholder="Enter your email"
-                className="w-full px-4 pl-10 py-3 rounded-lg bg-gray-900 bg-opacity-70 border border-blue-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400"
-              />
-            </div>
-            <div className="relative">
-              <label className="block text-sm font-medium text-blue-200 mb-1">Your Message</label>
-              <span className="absolute left-3 top-9 text-blue-400 text-xl">💬</span>
-              <textarea 
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                placeholder="Write your message here..." 
-                rows={4} 
-                className="w-full px-4 pl-10 py-3 rounded-lg bg-gray-900 bg-opacity-70 border border-blue-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400"></textarea>
-            </div>
-            <button type="submit" className="w-full bg-gradient-to-r from-blue-400 via-cyan-500 to-indigo-400 hover:from-blue-500 hover:to-indigo-500 px-6 py-3 rounded-xl text-white font-semibold shadow-xl transition duration-300 tracking-wide mt-2 animate-bounce">
-              📤 Send Message
-            </button>
-            {success && (
-              <div className="text-green-400 text-center mt-4 animate-fade-in">
-                ✅ Message sent successfully!
-              </div>
-            )}
-          </form>
+        {/* Google Map instead of form */}
+        <div
+          className="bg-white bg-opacity-10 backdrop-blur-lg border border-blue-400 border-opacity-30 rounded-2xl shadow-2xl p-2 animate-fade-in self-center"
+          data-aos="zoom-in"
+          data-aos-delay="200"
+        >
+          <iframe
+            title="Dragon Car Detailing Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3510.0876013508905!2d76.95334127527954!3d28.386421975800065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d3d443693712d%3A0x8064f2cf5704b9df!2sDragon%20Car%20Detailing!5e0!3m2!1sen!2sin!4v1756088834152!5m2!1sen!2sin"
+            width="100%"
+            height="450"
+            style={{ border: 0, borderRadius: '1rem' }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </div>
     </div>

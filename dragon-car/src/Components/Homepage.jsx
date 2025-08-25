@@ -1,33 +1,41 @@
 import React from 'react';
 import CarBg from '../assets/car-bg.jpg';
-// import { Link } from 'react-router-dom';
+import LocationImg from '../assets/location.jpg';
 import { Link } from "react-scroll";
 
 export default function Home() {
   return (
     <section
-      className="relative bg-cover bg-center h-screen flex items-center justify-center"
+      className="relative bg-cover bg-center min-h-screen flex flex-col items-center justify-center"
       style={{ backgroundImage: `url(${CarBg})` }}
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-60" />
 
-      {/* Content */}
-      <div className="relative z-10 text-white text-center max-w-2xl p-8">
-        <h1 className="text-5xl font-bold mb-4">Design Your Dream Car</h1>
-        <p className="text-xl mb-6">
-          Explore a world of customization, creativity, and car aesthetics. Choose your model, color, rims, and more.
-        </p>
-        <Link
-          to="booking"        // matches <section id="booking"> in App.jsx
-          smooth={true}
-          duration={500}
-          offset={-64}        // prevents navbar from overlapping
-        >
-          {/* <button className="bg-[#00d4ff] hover:bg-[#00bfe5] text-black font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300 hover:shadow-[0_0_15px_#00d4ff]">
-            Book Your Appointment
-          </button> */}
-        </Link>
+      {/* Content Wrapper */}
+      <div className="relative z-10 w-full flex flex-col items-center px-4 sm:px-6 md:px-12 text-center text-white gap-6">
+        
+        {/* Hero Text */}
+        <div>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3">
+            Design Your Dream Car
+          </h1>
+          <p className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto">
+            Explore a world of customization, creativity, and car aesthetics. 
+            Choose your model, color, rims, and more.
+          </p>
+        </div>
+
+        {/* Location Image */}
+        <div className="relative w-full max-w-md sm:max-w-xl md:max-w-3xl">
+          <img
+            src={LocationImg}
+            alt="Our Location"
+            className="rounded-2xl shadow-lg border-4 border-white w-full h-auto object-cover"
+          />
+          {/* Black Overlay */}
+          <div className="absolute inset-0 bg-black bg-opacity-25 rounded-2xl" />
+        </div>
       </div>
     </section>
   );
