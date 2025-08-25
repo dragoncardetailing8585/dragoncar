@@ -19,7 +19,7 @@ export default function Home() {
         {/* Hero Text */}
         <div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3">
-            Design Your Dream Car
+            Dragon Car Detailing
           </h1>
           <p className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto">
             Explore a world of customization, creativity, and car aesthetics. 

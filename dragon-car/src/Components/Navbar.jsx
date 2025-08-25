@@ -18,7 +18,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo */}
         <Link to="home" smooth={true} duration={500} className="flex items-center space-x-2 cursor-pointer">
-          <img src={logo} alt="Logo" className="h-10 w-auto" />
+          <img src={logo} alt="Logo" className="h-12 w-auto" />
         </Link>
 
         {/* Hamburger Menu for Mobile */}
