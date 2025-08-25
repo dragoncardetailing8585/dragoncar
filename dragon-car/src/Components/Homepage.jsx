@@ -2,10 +2,11 @@ import React from 'react';
 import CarBg from '../assets/car-bg.jpg';
 import LocationImg from '../assets/location.jpg';
 import { Link } from "react-scroll";
-
+console.log(import.meta.env.NEXT_PUBLIC_API_URL);
 export default function Home() {
   return (
     <section
+    
       className="relative bg-cover bg-center min-h-screen flex flex-col items-center justify-center"
       style={{ backgroundImage: `url(${CarBg})` }}
     >
