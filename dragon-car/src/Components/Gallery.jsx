@@ -5,6 +5,8 @@ import 'slick-carousel/slick/slick-theme.css';
 import Car from '../assets/car.jpeg';
 import CarBack from '../assets/carback.jpeg';
 import Car3 from '../assets/car3.jpeg';
+import Car2 from '../assets/car2.jpeg';
+import Car4 from '../assets/car4.jpeg';
 
 export default function Gallery() {
   const images = [
@@ -45,18 +47,23 @@ export default function Gallery() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 animate-fade-in">
-        {[Car, CarBack, Car3].map((src, index) => (
-          <img
-            key={index}
-            src={src}
-            alt={`Gallery car ${index + 1}`}
-            className="rounded-xl shadow-md hover:scale-105 hover:shadow-2xl transition-transform duration-200"
-            data-aos="zoom-in"
-            data-aos-delay={index * 100}
-          />
-        ))}
-      </div>
+<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 animate-fade-in">
+  {[Car, Car2, Car4].map((src, index) => (
+    <div
+      key={index}
+      className="aspect-[9/14] rounded-xl shadow-md overflow-hidden hover:scale-105 hover:shadow-2xl transition-transform duration-200"
+      data-aos="zoom-in"
+      data-aos-delay={index * 100}
+    >
+      <img
+        src={src}
+        alt={`Gallery car ${index + 1}`}
+        className="w-full h-full object-cover"
+      />
+    </div>
+  ))}
+</div>
+
     </div>
   );
 }
