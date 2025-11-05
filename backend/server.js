@@ -8,8 +8,17 @@ config();
 import bookingRoutes from "./routes/bookingRoutes.js";
 
 const app = express();
-app.use(cors({  
-  origin: ["https://dragoncardetailing.com"],
+// app.use(cors({
+//   origin: [
+//     "https://dragoncardetailing.com",
+//     "http://localhost:5173"
+//   ],
+//   methods: ["GET", "POST"],
+// }));
+app.use(cors({
+  origin: [
+    "http://localhost:5173"
+  ],
   methods: ["GET", "POST"],
 }));
 app.use(json());

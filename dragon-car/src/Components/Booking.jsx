@@ -3,7 +3,8 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 // const API_URL = import.meta.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 // const API_URL = import.meta.env.VITE_API_URL;
-const API_URL = "https://dragon-car.onrender.com";
+// const API_URL = "https://dragon-car.onrender.com" || "http://localhost:5000";
+const API_URL = "http://localhost:5000";
 const timeSlots = [
   '10:00 AM', '11:00 AM', '12:00 PM',
   '1:00 PM', '2:00 PM', '3:00 PM',
@@ -44,6 +45,7 @@ export default function Booking() {
         ...prev,
         [dateStr]: data.map(booking => booking.time)
       }));
+      console.log("Fetched booked slots for", dateStr, data);
     } catch (err) {
       console.error("Error fetching booked slots", err);
     }
@@ -63,6 +65,7 @@ export default function Booking() {
 
     setLoading(true);
     const dateStr = selectedDate.toISOString().split('T')[0];
+    console.log("dateStr:", dateStr);
 
     try {
       const res = await fetch(`${API_URL}/api/bookings`, {
@@ -76,9 +79,10 @@ export default function Booking() {
           service: selectedService
         }),
       });
+      
 
       const result = await res.json();
-
+      console.log("Posted data:", result);
       if (res.ok) {
         alert("✅ Booking successful!");
         setSubmitted(true);
