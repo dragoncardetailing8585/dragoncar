@@ -24,7 +24,7 @@ export async function createBooking(req, res) {
           console.log("✅ Calendar event created");
         } catch (err) {
           console.error("❌ Calendar failed:", err.message);
-          console.error("❌ Err", err.message);
+          console.error("❌ Err", err);
         }
       })();
 
