@@ -23,6 +23,11 @@ const services = [
   "Foam Wash"
 ];
 
+const formatDateLocal = (date) => {
+  if (!date) return null;
+  return date.toLocaleDateString("en-CA"); 
+};
+
 export default function Booking() {
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState('');
@@ -32,27 +37,31 @@ export default function Booking() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const isBooked = (date, time) => {
-    if (!date) return false;
-    const dateStr = date.toISOString().split('T')[0];
-    return bookedSlots[dateStr]?.includes(time);
-  };
+const isBooked = (date, time) => {
+  if (!date) return false;
+  const dateStr = formatDateLocal(date);
+  return bookedSlots[dateStr]?.includes(time);
+};
 
   const fetchBookedSlots = async () => {
-    if (!selectedDate) return;
-    const dateStr = selectedDate.toISOString().split('T')[0];
-    try {
-      const res = await fetch(`${API_URL}/api/bookings/date/${dateStr}`);
-      const data = await res.json();
-      setBookedSlots((prev) => ({
-        ...prev,
-        [dateStr]: data.map(booking => booking.time)
-      }));
-      console.log("Fetched booked slots for", dateStr, data);
-    } catch (err) {
-      console.error("Error fetching booked slots", err);
-    }
-  };
+  if (!selectedDate) return;
+
+  const dateStr = formatDateLocal(selectedDate);
+
+  try {
+    const res = await fetch(`${API_URL}/api/bookings/date/${dateStr}`);
+    const data = await res.json();
+
+    setBookedSlots((prev) => ({
+      ...prev,
+      [dateStr]: data.map((booking) => booking.time),
+    }));
+
+    console.log("Fetched booked slots for", dateStr);
+  } catch (err) {
+    console.error("Error fetching booked slots", err);
+  }
+};
 
   useEffect(() => {
     if (selectedDate) {
@@ -67,7 +76,7 @@ export default function Booking() {
     }
 
     setLoading(true);
-    const dateStr = selectedDate.toISOString().split('T')[0];
+    const dateStr = formatDateLocal(selectedDate);
     console.log("dateStr:", dateStr);
 
     try {
