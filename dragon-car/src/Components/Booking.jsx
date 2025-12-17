@@ -3,7 +3,8 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 // const API_URL = import.meta.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 // const API_URL = import.meta.env.VITE_API_URL;
-const API_URL = "https://dragon-car.onrender.com" || "http://localhost:5000";
+// const API_URL = "https://dragon-car.onrender.com" || "http://localhost:5000";
+const API_URL = "http://localhost:5000";
 // const API_URL = "https://dragon-car.onrender.com";
 // const API_URL = "http://localhost:5000";
 
