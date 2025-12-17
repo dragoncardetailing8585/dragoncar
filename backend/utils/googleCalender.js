@@ -54,7 +54,7 @@ function addOneHour(dateTime) {
   let [h, m] = time.split(":");
 
   h = String((Number(h) + 1) % 24).padStart(2, "0");
-  return `${date}T${h}:${m}`;
+  return `${date}T${h}:${m}:00`;
 }
 
 export default createCalendarEvent;
