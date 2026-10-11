@@ -67,7 +67,7 @@ export default function Contact() {
         >
           <iframe
             title="Dragon Car Detailing Location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3510.0876013508905!2d76.95334127527954!3d28.386421975800065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d3d443693712d%3A0x8064f2cf5704b9df!2sDragon%20Car%20Detailing!5e0!3m2!1sen!2sin!4v1756088834152!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14039.386664403843!2d76.9284958972453!3d28.393698856805205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d3d443693712d%3A0x8064f2cf5704b9df!2sDragon%20Car%20Detailing!5e0!3m2!1sen!2sin!4v1791707382029!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
             width="100%"
             height="450"
             style={{ border: 0, borderRadius: '1rem' }}
