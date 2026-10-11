@@ -23,7 +23,7 @@ export default function Contact() {
               <span className="text-2xl">📞</span>
               <div>
                 <h4 className="text-xl font-semibold text-white">Contact Numbers</h4>
-                <p className="text-gray-300">9990498585, 8510888585</p>
+                <p className="text-gray-300">9990358585, 8510888585</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
