@@ -42,8 +42,8 @@ export default function Contact() {
               <div>
                 <h4 className="text-xl font-semibold text-white">Address</h4>
                 <p className="text-gray-300">
-                  Rao Hukamchand Chowk Circle-2, Opposite Elan Mall, Sector 81A,<br />
-                  Vatika India Next, Gurugram - 122004
+                 Sector 86 Rd, opp. St. Xavier’s High School, Nawada, Sector 81,<br />
+                  Vatika India Next,Gurugram, Haryana 122012
                 </p>
               </div>
             </div>
